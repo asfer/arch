@@ -1,0 +1,44 @@
+
+pkgname=intellij
+pkgver=12.1.4
+pkgrel=1
+epoch=
+pkgdesc="A Java and polyglot IDE from JetBrains"
+arch=('x86_64')
+url="http://www.jetbrains.com/idea/"
+license=('unknown')
+groups=()
+depends=('jdk')
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=(http://download.jetbrains.com/idea/ideaIU-$pkgver.tar.gz)
+noextract=(ideaIU-$pkgver.tar.gz)
+md5sums=('b3a2e34a607453f1d6bddffdf0a162a3')
+
+prepare() {
+	cd $srcdir
+	mkdir files 
+	tar -zxf ideaIU-$pkgver.tar.gz -C files --strip 1
+}
+
+build() {
+	:
+}
+
+check() {
+	:
+}
+
+package() {
+	cd $pkgdir
+	mkdir -p opt/$pkgname
+	cp -R $srcdir/files/* opt/$pkgname
+}
