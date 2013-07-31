@@ -27,6 +27,9 @@ prepare() {
 	cd $srcdir
 	mkdir files 
 	tar -zxf ideaIU-$pkgver.tar.gz -C files --strip 1
+	cd files/bin
+	ln -s idea.sh idea
+	ln -s idea.sh intellij
 }
 
 build() {
