@@ -1,5 +1,5 @@
 
-pkgname=intellij
+pkgname=intellij-idea
 pkgver=12.1.4
 pkgrel=1
 epoch=
@@ -16,7 +16,7 @@ provides=()
 conflicts=()
 replaces=()
 backup=()
-options=()
+options=(!strip)
 install=
 changelog=
 source=(http://download.jetbrains.com/idea/ideaIU-$pkgver.tar.gz)
@@ -25,9 +25,9 @@ md5sums=('b3a2e34a607453f1d6bddffdf0a162a3')
 
 prepare() {
 	cd $srcdir
-	mkdir files 
-	tar -zxf ideaIU-$pkgver.tar.gz -C files --strip 1
-	cd files/bin
+	mkdir $pkgname 
+	tar -zxf ideaIU-$pkgver.tar.gz -C $pkgname --strip 1
+	cd $pkgname/bin
 	ln -s idea.sh idea
 	ln -s idea.sh intellij
 }
@@ -43,5 +43,5 @@ check() {
 package() {
 	cd $pkgdir
 	mkdir -p opt/$pkgname
-	cp -R $srcdir/files/* opt/$pkgname
+	mv $srcdir/$pkgname opt/
 }
