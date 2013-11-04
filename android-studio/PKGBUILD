@@ -1,0 +1,43 @@
+
+pkgname=android-studio
+pkgver=132.883541
+pkgrel=1
+epoch=
+pkgdesc="Android Studio"
+arch=('x86_64')
+url="http://developer.android.com/sdk/installing/studio.html"
+license=('unknown')
+groups=()
+depends=()
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=(http://dl.google.com/android/studio/android-studio-bundle-$pkgver-linux.tgz)
+noextract=()
+md5sums=('7a6f9b12b2cd5321ab0818b51306e01c')
+
+prepare() {
+	:
+}
+
+build() {
+	:
+}
+
+check() {
+	:
+}
+
+package() {
+	cd $pkgdir
+	mkdir opt
+	mv $srcdir/$pkgname opt/$pkgname
+	chmod -R 0755 opt
+}
