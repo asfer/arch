@@ -1,9 +1,9 @@
 
 pkgname=intellij-idea
-pkgver=12.1.6
+pkgver=13
 pkgrel=1
 epoch=
-pkgdesc="A Java and polyglot IDE from JetBrains"
+pkgdesc="IntelliJ IDEA Ultimate"
 arch=('x86_64')
 url="http://www.jetbrains.com/idea/"
 license=('unknown')
@@ -21,7 +21,7 @@ install=
 changelog=
 source=(http://download.jetbrains.com/idea/ideaIU-$pkgver.tar.gz)
 noextract=(ideaIU-$pkgver.tar.gz)
-md5sums=('b95526c997ac707d8e153789f97c71a0')
+md5sums=('1bf2c9ac63f522ad528de9a08b25d1e1')
 
 prepare() {
 	cd $srcdir
