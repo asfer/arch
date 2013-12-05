@@ -1,0 +1,43 @@
+
+pkgname=android-adt-bundle
+pkgver=20131030
+pkgrel=1
+epoch=
+pkgdesc="Android ADT Bundle"
+arch=('x86_64')
+url="http://developer.android.com/sdk/index.html"
+license=('unknown')
+groups=()
+depends=()
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=(http://dl.google.com/android/adt/adt-bundle-linux-x86_64-$pkgver.zip)
+noextract=()
+md5sums=('99b51a4f0526434b083701a896550b72')
+
+prepare() {
+	:
+}
+
+build() {
+	:
+}
+
+check() {
+	:
+}
+
+package() {
+	cd $pkgdir
+	mkdir opt
+	mv $srcdir/adt-bundle-linux-x86_64-$pkgver opt/$pkgname
+	chmod -R 0755 opt
+}
