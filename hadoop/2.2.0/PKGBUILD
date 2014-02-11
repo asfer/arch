@@ -1,0 +1,49 @@
+pkgname=hadoop
+pkgver=2.2.0
+pkgrel=1
+epoch=
+pkgdesc="Open-source software for reliable, scalable, distributed computing"
+arch=('x86_64')
+url="http://hadoop.apache.org/"
+license=('Apache')
+groups=()
+depends=()
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=(http://mirrors.fe.up.pt/pub/apache/hadoop/common/$pkgname-$pkgver/$pkgname-$pkgver.tar.gz)
+noextract=()
+md5sums=('25f27eb0b5617e47c032319c0bfd9962')
+
+prepare() {
+	#cd "$srcdir/$pkgname-$pkgver"
+	#patch -p1 -i "$srcdir/$pkgname-$pkgver.patch"
+	:
+}
+
+build() {
+	#cd "$srcdir/$pkgname-$pkgver"
+	#./configure --prefix=/usr
+	#make
+	:
+}
+
+check() {
+	#cd "$srcdir/$pkgname-$pkgver"
+	#make -k check
+	:
+}
+
+package() {
+	#cd "$srcdir/$pkgname-$pkgver"
+	#make DESTDIR="$pkgdir/" install
+	mkdir -p "$pkgdir/opt/$pkgname"
+	cp -R "$srcdir/$pkgname-$pkgver/." "$pkgdir/opt/$pkgname/"
+}
