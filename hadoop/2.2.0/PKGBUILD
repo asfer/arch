@@ -26,8 +26,9 @@ prepare() {
 	cd "$srcdir/$pkgname-$pkgver"
     find . -type f -name *.cmd -delete
     mv etc/hadoop/ conf
-    mv -f "$startdir/hdfs-site.xml" conf/hdfs-site.xml
     mv -f "$startdir/core-site.xml" conf/core-site.xml
+    mv -f "$startdir/yarn-site.xml" conf/yarn-site.xml
+    mv -f "$startdir/hdfs-site.xml" conf/hdfs-site.xml
     install -m775 -d hdfs/namenode
     install -m775 -d hdfs/datanode
 }
