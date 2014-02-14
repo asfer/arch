@@ -1,0 +1,33 @@
+
+pre_install() {
+    if [ -n "$JAVA_HOME" ]; then
+        echo "set JAVA_HOME"; exit
+    fi
+
+    if [ -z $(getent group hadoop) ]; then
+        useradd hadoop
+    fi
+}
+
+post_install() {
+    chown root:hadoop /opt/hadoop/logs/
+
+    echo "add group hadoop to user"
+    echo "add paths for /opt/hadoop/sbin and /opt/hadoop/bin"
+}
+
+pre_upgrade() {
+    :
+}
+
+post_upgrade() {
+    :
+}
+
+pre_remove() {
+    :
+}
+
+post_remove() {
+    :
+}
