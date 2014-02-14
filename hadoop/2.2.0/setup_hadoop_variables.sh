@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+export HADOOP_HOME=/opt/hadoop
+export HADOOP_CONF_DIR=$HADOOP_HOME/conf
+export HADOOP_MAPRED_HOME=$HADOOP_HOME
+export HADOOP_COMMON_HOME=$HADOOP_HOME
+export HADOOP_HDFS_HOME=$HADOOP_HOME
+export YARN_HOME=$HADOOP_HOME
+
+export PATH=$PATH:$HADOOP_HOME/bin
+export PATH=$PATH:$HADOOP_HOME/sbin
+
