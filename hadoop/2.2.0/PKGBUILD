@@ -27,7 +27,7 @@ prepare() {
     find . -type f -name *.cmd -delete
     mv etc/hadoop/ conf
     mv -f "$startdir/hdfs-site.xml" conf/hdfs-site.xml
-    install -m775 -d logs/
+    mv -f "$startdir/core-site.xml" conf/core-site.xml
     install -m775 -d hdfs/namenode
     install -m775 -d hdfs/datanode
 }
