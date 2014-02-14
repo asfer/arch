@@ -23,27 +23,24 @@ noextract=()
 md5sums=('25f27eb0b5617e47c032319c0bfd9962')
 
 prepare() {
-	#cd "$srcdir/$pkgname-$pkgver"
-	#patch -p1 -i "$srcdir/$pkgname-$pkgver.patch"
-	:
+	cd "$srcdir/$pkgname-$pkgver"
+    find . -type f -name *.cmd -delete
+    mv etc/hadoop/ conf
+    mv -f "$startdir/hdfs-site.xml" conf/hdfs-site.xml
+    install -m775 -d logs/
+    install -m775 -d hdfs/namenode
+    install -m775 -d hdfs/datanode
 }
 
 build() {
-	#cd "$srcdir/$pkgname-$pkgver"
-	#./configure --prefix=/usr
-	#make
 	:
 }
 
 check() {
-	#cd "$srcdir/$pkgname-$pkgver"
-	#make -k check
 	:
 }
 
 package() {
-	#cd "$srcdir/$pkgname-$pkgver"
-	#make DESTDIR="$pkgdir/" install
 	mkdir -p "$pkgdir/opt/$pkgname"
 	cp -R "$srcdir/$pkgname-$pkgver/." "$pkgdir/opt/$pkgname/"
 }
